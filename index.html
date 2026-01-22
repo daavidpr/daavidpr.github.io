@@ -463,7 +463,7 @@ font-size: 2rem;
 <div class="hero-content">
 <h1>Penetration Tester & Security Consultant</h1>
 <p class="subtitle">Especializado en auditorías de seguridad, Active Directory y exploración de vulnerabilidades</p>
-<button class="cta-button" onclick="navigate('blog')">Explorar Blog</button>
+<button class="cta-button" onclick="window.open('https://daavidpr.github.io/blog/', '_blank')">Explorar Blog</button>
 <button class="cta-button cta-button-outline" onclick="navigate('proyectos')">Ver Proyectos</button>
 </div>
 </div>
@@ -671,11 +671,6 @@ navigate(sectionId);
 });
 
 function navigate(sectionId) {
-if (sectionId === 'blog') {
-window.open('https://daavidpr.github.io/blog/', '_blank');
-return;
-}
-
 // Update sections
 sections.forEach(section => {
 section.classList.remove('active');
