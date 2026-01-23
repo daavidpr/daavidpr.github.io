@@ -4,325 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>iHarzz - Blog | Penetration Testing & Cybersecurity</title>
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-:root {
---primary: #00d9ff;
---secondary: #7c3aed;
---dark-bg: #0f172a;
---darker-bg: #020617;
---text-primary: #f1f5f9;
---text-secondary: #cbd5e1;
---border-color: #1e293b;
-}
-
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background-color: var(--dark-bg);
-color: var(--text-primary);
-line-height: 1.6;
-overflow-x: hidden;
-}
-
-/* Navbar */
-nav {
-background: rgba(15, 23, 42, 0.95);
-backdrop-filter: blur(10px);
-border-bottom: 1px solid var(--border-color);
-position: sticky;
-top: 0;
-z-index: 1000;
-padding: 1.5rem 0;
-}
-
-nav .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 2rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.logo {
-font-size: 1.8rem;
-font-weight: bold;
-background: linear-gradient(135deg, var(--primary), var(--secondary));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-
-nav ul {
-display: flex;
-list-style: none;
-gap: 3rem;
-}
-
-nav a {
-color: var(--text-secondary);
-text-decoration: none;
-transition: color 0.3s ease;
-font-weight: 500;
-cursor: pointer;
-}
-
-nav a:hover,
-nav a.active {
-color: var(--primary);
-}
-
-/* Container */
-.container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 2rem;
-}
-
-/* Hero Section */
-.hero {
-min-height: 70vh;
-display: flex;
-align-items: center;
-justify-content: center;
-background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(124, 58, 237, 0.08));
-position: relative;
-overflow: hidden;
-padding-top: 100px;
-}
-
-.hero::before {
-content: '';
-position: absolute;
-width: 400px;
-height: 400px;
-background: radial-gradient(circle, rgba(0, 217, 255, 0.15), transparent);
-border-radius: 50%;
-top: -100px;
-right: -100px;
-animation: float 6s ease-in-out infinite;
-}
-
-.hero::after {
-content: '';
-position: absolute;
-width: 300px;
-height: 300px;
-background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent);
-border-radius: 50%;
-bottom: -50px;
-left: -50px;
-animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-0%, 100% { transform: translateY(0px); }
-50% { transform: translateY(30px); }
-}
-
-.hero-content {
-text-align: center;
-z-index: 1;
-animation: slideUp 0.8s ease-out;
-max-width: 900px;
-}
-
-@keyframes slideUp {
-from {
-opacity: 0;
-transform: translateY(30px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-
-.hero h1 {
-font-size: 4rem;
-margin-bottom: 1rem;
-line-height: 1.2;
-}
-
-.hero .subtitle {
-font-size: 1.6rem;
-color: var(--text-secondary);
-margin-bottom: 1rem;
-}
-
-.hero-stats {
-display: flex;
-justify-content: center;
-gap: 3rem;
-margin-top: 2rem;
-}
-
-.stat {
-text-align: center;
-}
-
-.stat-number {
-font-size: 2.5rem;
-font-weight: bold;
-background: linear-gradient(135deg, var(--primary), var(--secondary));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-display: block;
-}
-
-.stat-label {
-color: var(--text-secondary);
-font-size: 0.95rem;
-}
-
-/* Blog Grid */
-.blog-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 2.5rem;
-margin-top: 5rem;
-margin-bottom: 6rem;
-}
-
-.blog-card {
-background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
-border: 1px solid var(--border-color);
-border-radius: 20px;
-overflow: hidden;
-transition: all 0.4s ease;
-cursor: pointer;
-position: relative;
-}
-
-.blog-card::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: linear-gradient(90deg, var(--primary), var(--secondary));
-transform: scaleX(0);
-transition: transform 0.4s ease;
-}
-
-.blog-card:hover {
-border-color: var(--primary);
-transform: translateY(-10px);
-box-shadow: 0 30px 60px rgba(0, 217, 255, 0.25);
-}
-
-.blog-card:hover::before {
-transform: scaleX(1);
-}
-
-.blog-card-date {
-color: var(--primary);
-font-size: 0.9rem;
-padding: 1.5rem 2rem 0;
-font-weight: 500;
-}
-
-.blog-card-content {
-padding: 2rem;
-}
-
-.blog-card h3 {
-font-size: 1.6rem;
-margin-bottom: 1rem;
-color: var(--text-primary);
-line-height: 1.3;
-}
-
-.blog-card p {
-color: var(--text-secondary);
-margin-bottom: 1.5rem;
-line-height: 1.7;
-}
-
-.blog-tags {
-display: flex;
-flex-wrap: wrap;
-gap: 0.75rem;
-}
-
-.blog-tag {
-background: rgba(0, 217, 255, 0.1);
-color: var(--primary);
-padding: 0.4rem 1rem;
-border-radius: 20px;
-font-size: 0.8rem;
-font-weight: 500;
-transition: all 0.3s ease;
-}
-
-.blog-tag:hover {
-background: rgba(124, 58, 237, 0.2);
-color: var(--secondary);
-}
-
-/* Footer */
-footer {
-background: var(--darker-bg);
-border-top: 1px solid var(--border-color);
-padding: 3rem 0;
-text-align: center;
-color: var(--text-secondary);
-}
-
-.social-links {
-display: flex;
-justify-content: center;
-gap: 2rem;
-margin-bottom: 2rem;
-}
-
-.social-links a {
-color: var(--primary);
-text-decoration: none;
-font-size: 1.1rem;
-transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-color: var(--secondary);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-nav ul {
-gap: 1.5rem;
-}
-
-.hero h1 {
-font-size: 2.8rem;
-}
-
-.hero .subtitle {
-font-size: 1.3rem;
-}
-
-.hero-stats {
-gap: 2rem;
-flex-direction: column;
-}
-
-.stat-number {
-font-size: 2rem;
-}
-
-.blog-grid {
-grid-template-columns: 1fr;
-gap: 2rem;
-}
-}
-</style>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
 <!-- Navigation -->
@@ -330,15 +13,16 @@ gap: 2rem;
 <div class="container">
 <div class="logo">iHarzz</div>
 <ul>
-<li><a href="https://daavidpr.github.io/" class="nav-link">Home</a></li>
+<li><a href="../" class="nav-link">Home</a></li>
 <li><a class="nav-link active">Blog</a></li>
-<li><a href="https://daavidpr.github.io/proyectos/" class="nav-link">Proyectos</a></li>
-<li><a href="https://daavidpr.github.io/retos/" class="nav-link">Retos</a></li>
+<li><a href="../proyectos/" class="nav-link">Proyectos</a></li>
+<li><a href="../retos/" class="nav-link">Retos</a></li>
 </ul>
 </div>
 </nav>
 
 <!-- Hero Section -->
+<main>
 <section class="hero">
 <div class="hero-content">
 <h1>Blog Técnico</h1>
@@ -448,6 +132,7 @@ gap: 2rem;
 </div>
 </div>
 </section>
+</main>
 
 <!-- Footer -->
 <footer>
@@ -462,13 +147,6 @@ gap: 2rem;
 </div>
 </footer>
 
-<script>
-// Navbar active on scroll
-window.addEventListener('scroll', () => {
-if (window.scrollY > 100) {
-document.querySelector('nav').style.borderBottomColor = 'var(--border-color)';
-}
-});
-</script>
+<script src="../js/script.js"></script>
 </body>
 </html>
