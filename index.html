@@ -150,7 +150,16 @@ line-height: 1.2;
 .hero .subtitle {
 font-size: 1.5rem;
 color: var(--text-secondary);
-margin-bottom: 2rem;
+margin-bottom: 3rem;
+}
+
+.cta-buttons {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 1.5rem;
+max-width: 600px;
+margin: 0 auto;
 }
 
 .cta-button {
@@ -164,9 +173,11 @@ font-weight: bold;
 transition: all 0.3s ease;
 cursor: pointer;
 border: none;
-margin: 0.5rem;
 font-size: 1.1rem;
 box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+flex: 1;
+min-width: 220px;
+max-width: 280px;
 }
 
 .cta-button:hover {
@@ -366,6 +377,16 @@ font-size: 2.8rem;
 font-size: 1.2rem;
 }
 
+.cta-buttons {
+flex-direction: column;
+align-items: center;
+}
+
+.cta-button {
+min-width: 250px;
+max-width: none;
+}
+
 .section-title {
 font-size: 2.5rem;
 }
@@ -397,8 +418,11 @@ gap: 1.5rem;
 <div class="hero-content">
 <h1>Penetration Tester</h1>
 <p class="subtitle">Especializado en Active Directory, Web Pentesting y Red Team Operations</p>
+<div class="cta-buttons">
 <button class="cta-button" onclick="window.location.href='https://daavidpr.github.io/blog/'">Leer Blog</button>
+<button class="cta-button" onclick="window.location.href='https://daavidpr.github.io/proyectos/'">Ver Proyectos</button>
 <button class="cta-button cta-button-outline" onclick="navigate('retos')">Ver Retos</button>
+</div>
 </div>
 </div>
 </section>
