@@ -1,0 +1,166 @@
+/* Retos Specific Styles */
+.hero {
+    min-height: 70vh;
+}
+
+.hero-stats {
+display: flex;
+justify-content: center;
+gap: 4rem;
+margin-top: 2.5rem;
+}
+
+.stat {
+text-align: center;
+}
+
+.stat-number {
+font-size: 3rem;
+font-weight: bold;
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+display: block;
+}
+
+.stat-label {
+color: var(--text-secondary);
+font-size: 1rem;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+/* Retos Grid */
+.retos-container {
+margin-top: 6rem;
+margin-bottom: 8rem;
+}
+
+.reto-category {
+margin-bottom: 5rem;
+}
+
+.reto-category h3 {
+font-size: 2.5rem;
+margin-bottom: 2.5rem;
+color: var(--primary);
+display: flex;
+align-items: center;
+gap: 1.5rem;
+font-weight: 700;
+}
+
+.reto-category h3::before {
+content: '';
+width: 5px;
+height: 2.5rem;
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+border-radius: 3px;
+}
+
+.retos-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2.5rem;
+}
+
+.reto-card {
+background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+border: 2px solid var(--border-color);
+border-radius: 20px;
+overflow: hidden;
+transition: all 0.4s ease;
+cursor: pointer;
+position: relative;
+}
+
+.reto-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(--primary), var(--secondary));
+transform: scaleX(0);
+transition: transform 0.4s ease;
+}
+
+.reto-card:hover {
+border-color: var(--primary);
+transform: translateY(-12px);
+box-shadow: 0 35px 70px rgba(0, 217, 255, 0.3);
+}
+
+.reto-card:hover::before {
+transform: scaleX(1);
+}
+
+.reto-card-content {
+padding: 2.5rem 2rem;
+text-align: center;
+}
+
+.reto-card .difficulty {
+display: inline-block;
+padding: 0.6rem 1.5rem;
+border-radius: 30px;
+font-size: 0.9rem;
+font-weight: bold;
+margin-bottom: 1.5rem;
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.difficulty.easy {
+background: rgba(34, 197, 94, 0.25);
+color: #22c55e;
+border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.difficulty.medium {
+background: rgba(245, 158, 11, 0.25);
+color: #f59e0b;
+border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.difficulty.hard {
+background: rgba(239, 68, 68, 0.25);
+color: #ef4444;
+border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.reto-card h4 {
+font-size: 1.6rem;
+margin: 1.5rem 0;
+color: var(--text-primary);
+font-weight: 600;
+}
+
+.reto-score {
+font-size: 1.2rem;
+color: var(--primary);
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+.hero-stats {
+gap: 2rem;
+flex-direction: column;
+}
+
+.stat-number {
+font-size: 2.2rem;
+}
+
+.retos-grid {
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+
+.reto-category h3 {
+font-size: 1.8rem;
+}
+}
