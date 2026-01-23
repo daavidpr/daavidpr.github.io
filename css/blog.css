@@ -1,0 +1,132 @@
+/* Blog Specific Styles */
+.hero {
+    min-height: 70vh;
+}
+
+.hero-stats {
+display: flex;
+justify-content: center;
+gap: 3rem;
+margin-top: 2rem;
+}
+
+.stat {
+text-align: center;
+}
+
+.stat-number {
+font-size: 2.5rem;
+font-weight: bold;
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+display: block;
+}
+
+.stat-label {
+color: var(--text-secondary);
+font-size: 0.95rem;
+}
+
+/* Blog Grid */
+.blog-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 2.5rem;
+margin-top: 5rem;
+margin-bottom: 6rem;
+}
+
+.blog-card {
+background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+border: 1px solid var(--border-color);
+border-radius: 20px;
+overflow: hidden;
+transition: all 0.4s ease;
+cursor: pointer;
+position: relative;
+}
+
+.blog-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(--primary), var(--secondary));
+transform: scaleX(0);
+transition: transform 0.4s ease;
+}
+
+.blog-card:hover {
+border-color: var(--primary);
+transform: translateY(-10px);
+box-shadow: 0 30px 60px rgba(0, 217, 255, 0.25);
+}
+
+.blog-card:hover::before {
+transform: scaleX(1);
+}
+
+.blog-card-date {
+color: var(--primary);
+font-size: 0.9rem;
+padding: 1.5rem 2rem 0;
+font-weight: 500;
+}
+
+.blog-card-content {
+padding: 2rem;
+}
+
+.blog-card h3 {
+font-size: 1.6rem;
+margin-bottom: 1rem;
+color: var(--text-primary);
+line-height: 1.3;
+}
+
+.blog-card p {
+color: var(--text-secondary);
+margin-bottom: 1.5rem;
+line-height: 1.7;
+}
+
+.blog-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+}
+
+.blog-tag {
+background: rgba(0, 217, 255, 0.1);
+color: var(--primary);
+padding: 0.4rem 1rem;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 500;
+transition: all 0.3s ease;
+}
+
+.blog-tag:hover {
+background: rgba(124, 58, 237, 0.2);
+color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+.hero-stats {
+gap: 2rem;
+flex-direction: column;
+}
+
+.stat-number {
+font-size: 2rem;
+}
+
+.blog-grid {
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+}
