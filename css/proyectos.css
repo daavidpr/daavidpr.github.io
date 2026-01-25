@@ -14,12 +14,15 @@ background: rgba(0, 217, 255, 0.1);
 }
 
 /* Proyectos Grid */
+#proyectos {
+    padding: 8rem 0;
+}
+
 .proyectos-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 gap: 2.5rem;
-margin-top: 4rem;
-margin-bottom: 6rem;
+margin-top: 2rem;
 }
 
 .proyecto-card {
