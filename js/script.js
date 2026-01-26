@@ -14,32 +14,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Reveal elements on scroll
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            
-            // Si es un contenedor de elementos escalonados
-            if (entry.target.classList.contains('stagger-container')) {
-                const items = entry.target.querySelectorAll('.stagger-item');
-                items.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.add('active');
-                    }, index * 100);
-                });
-            }
-        }
-    });
-}, { threshold: 0.1 });
-
-// Initialize observers
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.reveal, .stagger-container').forEach(el => {
-        revealObserver.observe(el);
-    });
-});
-
 // Navbar active on scroll
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
