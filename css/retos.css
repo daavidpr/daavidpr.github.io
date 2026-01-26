@@ -1,3 +1,85 @@
+/* Platform Selection Grid */
+.platform-selection {
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.platform-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.platform-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.platform-card.htb::before { background: #22c55e; }
+.platform-card.caixabank::before { background: #00d9ff; }
+.platform-card.thm::before { background: #ef4444; }
+.platform-card.picoctf::before { background: #7c3aed; }
+
+.platform-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 217, 255, 0.2);
+}
+
+.platform-card:hover::before {
+    transform: scaleX(1);
+}
+
+.platform-card-content {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.platform-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.platform-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.platform-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.view-all {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* Retos Specific Styles */
 .hero {
     min-height: 70vh;
