@@ -54,9 +54,27 @@
 }
 
 .platform-icon {
-    font-size: 3rem;
     display: block;
     margin-bottom: 1.5rem;
+}
+
+.platform-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.platform-card:hover .platform-logo {
+    transform: scale(1.1);
+}
+
+.category-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 1rem;
 }
 
 .platform-card h3 {
