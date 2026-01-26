@@ -79,7 +79,9 @@
 }
 
 .category-logo[alt="HTB"],
-.category-logo[alt="PicoCTF"] {
+.category-logo[alt="PicoCTF"],
+.category-logo[alt="TryHackMe"],
+.category-logo[alt="CaixaBank"] {
     filter: none;
 }
 
