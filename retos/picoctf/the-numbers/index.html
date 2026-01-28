@@ -3,51 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iHarzz - Retos PicoCTF | CTF & Challenges</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/retos.css">
-    <link rel="icon" type="image/png" href="../../favicon.png">
+    <title>iHarzz - Writeup [THE NUMBERS] | Cryptography</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/writeup.css">
+    <link rel="icon" type="image/png" href="../../../favicon.png">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="../../" class="logo">iHarzz</a>
+            <a href="../../../" class="logo">iHarzz</a>
             <ul>
-                <li><a href="../../" class="nav-link">Home</a></li>
-                <li><a href="../../blog/" class="nav-link">Blog</a></li>
-                <li><a href="../../proyectos/" class="nav-link">Proyectos</a></li>
-                <li><a href="../../retos/" class="nav-link">Retos</a></li>
+                <li><a href="../../../" class="nav-link">Home</a></li>
+                <li><a href="../../../blog/" class="nav-link">Blog</a></li>
+                <li><a href="../../../proyectos/" class="nav-link">Proyectos</a></li>
+                <li><a href="../../../retos/" class="nav-link">Retos</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>PicoCTF Challenges</h1>
-                <p class="subtitle">Writeups detallados de retos de la plataforma PicoCTF</p>
-            </div>
-        </section>
-
-        <!-- Retos Section -->
-        <section class="container retos-container">
-            <div class="reto-category">
-                <h3><span class="platform-icon"><img src="https://avatars.githubusercontent.com/u/5315773?s=200&v=4" alt="PicoCTF" style="width: 30px; height: 30px; vertical-align: middle;"></span> PicoCTF</h3>
-                <div class="retos-grid">
-                    <a href="the-numbers/index.html" style="text-decoration: none;">
-                        <div class="reto-card">
-                            <div class="reto-card-content">
-                                <span class="difficulty easy">Fácil</span>
-                                <h4>[THE NUMBERS]</h4>
-                                <div class="reto-score">100 / 100</div>
-                            </div>
-                        </div>
-                    </a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="section-title">Writeup: [THE NUMBERS]</h1>
+            <p class="subtitle">Cryptography - Sustitución por Letra-Número</p>
+            <div class="hero-stats" style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                <div class="stat">
+                    <span class="stat-number" style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Dificultad</span>
+                    <span class="stat-label" style="display: block; color: #22c55e;">Fácil</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Plataforma</span>
+                    <span class="stat-label" style="display: block; color: var(--text-secondary);">PicoCTF</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <main class="container">
+        <article class="writeup-content">
+            <section class="writeup-section">
+                <div class="warning-box" style="background: rgba(245, 158, 11, 0.1); border: 1px solid #f59e0b; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+                    <h3 style="color: #f59e0b; margin-bottom: 0.5rem;">⚠️ ADVERTENCIA</h3>
+                    <p>ANTES DE VER EL WRITEUP ES RECOMENDABLE QUE PRUEBES A REALIZAR TÚ EL RETO.</p>
+                </div>
+                
+                <h2>ANÁLISIS INICIAL</h2>
+                <p>Para empezar este reto, será necesario descargar la imagen que se encuentra al iniciar el propio reto. Como podemos observar, hay una serie de números, y parte de la misma cadena está encerrada entre corchetes.</p>
+                
+                <div class="code-header" style="margin-top: 2rem;">SERIE NUMÉRICA:</div>
+                <pre><code>16 9 3 15 3 20 6 {20 8 5 14 21 13 2 5 18 19 13 1 19 15 14}</code></pre>
+            </section>
+
+            <section class="writeup-section">
+                <h3>Resolución</h3>
+                <p>Debido a la secuencia, podríamos encontrarnos ante una decodificación por sustitución. Para resolver el reto, utilizaremos una herramienta web llamada <strong>“dCode”</strong> en su apartado de sustitución.</p>
+                
+                <div class="info-badge" style="margin: 1.5rem 0;">
+                    HERRAMIENTA: <a href="https://www.dcode.fr/letter-number-cipher" target="_blank" style="color: var(--primary);">dCode - Letter Number Cipher</a>
+                </div>
+
+                <p>Una vez en la herramienta, la configuraremos con los números. Una vez ingresado el texto, pulsaremos el botón <strong>“Decrypt”</strong> y observaremos el resultado en la parte izquierda de la pantalla.</p>
+            </section>
+
+            <section class="writeup-section" style="border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <div class="flags-container">
+                    <div class="flag-card" style="background: rgba(0, 217, 255, 0.1); padding: 1.5rem; border-radius: 10px; border: 1px solid var(--primary); text-align: center;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">FLAG OBTENIDA</h4>
+                        <code style="color: var(--text-primary); font-size: 1.2rem;">PICOCTF{THENUMBERSMASON}</code>
+                    </div>
+                </div>
+            </section>
+        </article>
     </main>
 
     <!-- Footer -->
@@ -61,6 +88,6 @@
         </div>
     </footer>
 
-    <script src="../../js/script.js"></script>
+    <script src="../../../js/script.js"></script>
 </body>
 </html>
