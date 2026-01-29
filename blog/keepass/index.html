@@ -57,20 +57,39 @@
 
             <section class="writeup-section">
                 <h2>Pros y Contras de tener la base de datos en local</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>PROS</th>
-                                <th>CONTRAS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Control total</td><td>Falta de sincronización</td></tr>
-                            <tr><td>Mayor privacidad</td><td>Riesgo de pérdida de datos</td></tr>
-                            <tr><td>Acceso sin conexión</td><td>Riesgo de seguridad local</td></tr>
-                        </tbody>
-                    </table>
+                <div class="flags-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+                    <div class="flag-card" style="background: rgba(34, 197, 94, 0.05); padding: 2rem; border-radius: 20px; border: 1px solid rgba(34, 197, 94, 0.2); height: 100%;">
+                        <h4 style="color: #4ade80; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; font-size: 1.2rem;">
+                            <span style="font-size: 1.4rem;">✅</span> PROS
+                        </h4>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+                            <li style="color: var(--text-primary); display: flex; align-items: center; gap: 0.8rem;">
+                                <span style="color: #4ade80;">•</span> Control total de tus datos
+                            </li>
+                            <li style="color: var(--text-primary); display: flex; align-items: center; gap: 0.8rem;">
+                                <span style="color: #4ade80;">•</span> Mayor privacidad (sin terceros)
+                            </li>
+                            <li style="color: var(--text-primary); display: flex; align-items: center; gap: 0.8rem;">
+                                <span style="color: #4ade80;">•</span> Acceso sin conexión garantizado
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flag-card" style="background: rgba(239, 68, 68, 0.05); padding: 2rem; border-radius: 20px; border: 1px solid rgba(239, 68, 68, 0.2); height: 100%;">
+                        <h4 style="color: #f87171; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; font-size: 1.2rem;">
+                            <span style="font-size: 1.4rem;">❌</span> CONTRAS
+                        </h4>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+                            <li style="color: var(--text-primary); display: flex; align-items: center; gap: 0.8rem;">
+                                <span style="color: #f87171;">•</span> Falta de sincronización nativa
+                            </li>
+                            <li style="color: var(--text-primary); display: flex; align-items: center; gap: 0.8rem;">
+                                <span style="color: #f87171;">•</span> Riesgo de pérdida de datos sin backup
+                            </li>
+                            <li style="color: var(--text-primary); display: flex; align-items: center; gap: 0.8rem;">
+                                <span style="color: #f87171;">•</span> Requiere gestión manual de la seguridad
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
