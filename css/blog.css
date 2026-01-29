@@ -68,13 +68,13 @@
 .blog-card:hover {
     border-color: var(--primary);
     transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0, 217, 255, 0.25);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
 }
 
 .blog-header {
     padding: 2rem;
     background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 217, 255, 0.05));
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
 }
 
 .blog-card h3 {
@@ -97,6 +97,7 @@
     font-size: 1.05rem;
     line-height: 1.7;
     flex-grow: 1;
+    background: rgba(15, 23, 42, 0.4);
 }
 
 .blog-tags {
@@ -104,8 +105,8 @@
     flex-wrap: wrap;
     gap: 0.75rem;
     padding: 2rem;
-    border-top: 1px solid var(--border-color);
-    background: rgba(0, 217, 255, 0.05);
+    border-top: 1px solid rgba(0, 217, 255, 0.1);
+    background: rgba(15, 23, 42, 0.6);
 }
 
 .blog-tag {
